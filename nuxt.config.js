@@ -51,6 +51,8 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
+  //配了nginx就不用了代理了，首屏渲染从服务端直接请求也不用代理
+  //只有其他页面请求会跨域要代理
   modules: ["@nuxtjs/axios", "cookie-universal-nuxt"],
   axios: {
     proxy: true,
@@ -58,7 +60,7 @@ module.exports = {
   proxy: {
     "/api": "http://localhost:8080",
   },
-
+//
   /*
    ** Build configuration
    */
