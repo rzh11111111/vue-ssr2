@@ -16,7 +16,7 @@ export const state = () => ({
   
   export const actions = {
     login({ commit, getters }, u) {
-        // this.$axios由@nuxt/axios模块提供
+        // this.$axios由@nuxt/axios模块提供，在plugins/api-inject自定义的
       return this.$login(u).then(({ token }) => {
         if (token) {
           commit("init", token);
